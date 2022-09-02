@@ -93,6 +93,91 @@ class main{
 
 ## Operators
 
+- Operators are symbols that tell the compiler to perform specific operation.
+- In groovy, we have a function called `assert` which is similar to a `if` statement. If the expression is true, it further contines the code execution, if false, it raises an AssertionError.
+
+```groovy
+class main{
+
+    static void module02()
+        {
+            assert 2 + 1 == 3;
+            assert 4 - 3 == 1;
+            assert 5 - 3 == 9; // An assertion error will be raised in this line.
+            assert 2 % 2 == 0;
+        }
+    static void main(String[] args)
+        {
+            module02();
+        }
+}
+```
+
+- All other details reamian same as in case just like other programming languages.
+- Just some points to remember:
+  - A non-empty string in groovy evaluates to true.
+  - An empty string in groovy evaluates to false.
+
+- We also have ternary operator in groovy just like Java.
+- Syntax for ternary operator:
+
+```groovy
+def result_var = (condition) ? execute_this_if_true : execute_this_if_false;
+```
+
+## Conditional Statements in Groovy
+
+- They are also called Decision Making Statements.
+- We have 2 tyoes of Conditional statements in Groovy:
+  - if-else if-else
+  - switch statement
+
+### if-else if-else
+
+- The following is the general syntax:
+
+```groovy
+if(condition)
+  {
+    // Statements
+  }
+else if(condition)
+  {
+
+  }
+else
+  {
+    // Statements
+  }
+```
+
+### switch statement
+
+- The following is the general syntax:
+
+```groovy
+switch(variable)
+  {
+    case {condition1}:
+      // Statements
+      break;
+    
+    case {condition2}:
+      // Statements
+      break;
+    .
+    .
+    .
+    .
+    default:
+      // Statements
+      break;
+  }
+```
+
+## Loops in Groovy
+
+- 
 
 </strong>
 </p>

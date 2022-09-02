@@ -12,8 +12,15 @@ class main{
             print " ${c}";
             println age.getClass();
         }
+    static void module02()
+        {
+            assert 2 + 1 == 3;
+            assert 4 - 3 == 1;
+            assert 5 - 3 == 9; // An assertion error will be raised in this line.
+            assert 2 % 2 == 0;
+        }
     static void main(String[] args)
         {
-            module01();
+            module02();
         }
 }
