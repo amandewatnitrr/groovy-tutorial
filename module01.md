@@ -45,22 +45,53 @@
 ## Variables and Data Types in Groovy
 
 - In groovy, we can define a variable similar to the way we do it in Java.
-- Groovy is optionally typed.
+- Groovy is optionally typed(i.e. static and dynamic typing both)
+- A statically-typed language is a language (such as Java, C, or C++) where variable types are known at compile time.
+- A dynamically-typed languages perform type checking at runtime, while statically typed languages perform type checking at compile time.
 - We specify a variable name ,and assign value.
+- groovy like java is case sensitive.
 - Let's uderstand this with an example below:
 
 ```groovy
 class main{
-    static void main(String[] args)
+
+    static void module01()
         {
             def age=40;
             def name="sunil"
+            def (String a,int b, double c) = [30,40,50] /* We can also assign values to multiple variables at same time suignthe following method.*/
             println name + "'s age is: " + age;
+            println "${name}'s age is ${age}.";
+            println a;
+            print " ${b}";
+            print " ${c}";
             println age.getClass();
+        }
+    static void main(String[] args)
+        {
+            module01();
         }
 }
 ```
 
+- There are following datatypes in groovy:
+  - byte
+  - short
+  - int
+  - long
+  - float
+  - double
+  - char
+  - Boolean
+  - String
+
+- We can convert a variable from one type to another using following code syntax:
+
+```groovy
+  def var2 = (datatype)var1 // type conversion
+```
+
+## Operators
 
 
 </strong>
