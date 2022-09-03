@@ -116,5 +116,23 @@ class main{
   - Except Single and Double Quote initialization, all string declaration methods support multiple lines.
   - Interpolation is not supported for single quoted and triple quoted declaration or initialization of string.
 
+## Functions/Methods in Groovy
+
+- A function is an organized named block of code that is used to perform a single task, that makes code modular and reusable.
+- Functions enable programmers to break down or decompose a problem into smaller chunks, each of which performs a particular task.
+- It is a declarative type of programming style.
+- Methods can take parameters and even have a return type as well.
+- Below is the grneral struture of a function:
+
+```groovy
+def function_name(datatype parameter1,datatype parameter2...)
+    {
+        //Statements
+        return ;
+    }
+```
+
+
+
 </strong>
 </p>

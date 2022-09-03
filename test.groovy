@@ -23,16 +23,6 @@ class main{
         }
     static void function03()
         {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("What is your name, age and Salary??");
-            String str = sc.nextLine(); // for String Inpput from user
-            int integer = sc.nextInt();
-            double decimal = sc.nextDouble();
-            System.out.println("Username is ${str}. Age is ${integer} and salary is ${decimal}.");
-        }
-    static void main(String[] args)
-        {
-            //function03();        
             def name = """My name is Aman Kumar Dewangan.""";
             System.out.println("My name is ${name}");
             System.out.println("Length: " + name.length() ); // .length() returns the length of the string.
@@ -52,6 +42,11 @@ class main{
             println name.toLowerCase();
             println name.toUpperCase();
             println name.toList();
+        }
+    static void main(String[] args)
+        {
+            //function03();        
+            
         }
 
         
