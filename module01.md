@@ -177,7 +177,109 @@ switch(variable)
 
 ## Loops in Groovy
 
-- 
+- Loops are iteratory statements, that perform a specific task untill and unless it meets a critical condition.
+- In Groovy we have 4 types of loops:
+  - `for`
+  - `for in`
+  - `while`
+  - `do while`
+- We also have iteratory keywords in Groovy, such as:
+  - `upto`
+  - `times`
+  - `step`
+
+### for loop
+
+- Below is the general syntax for `for` loop:
+  
+```groovy
+for(int i=start; i<=end; increment)
+  {
+    // Statements
+  }
+```
+
+### for in
+
+- Below is the general syntax for `for in`:
+
+```groovy
+for(i in start..end) // Here the increment or decrement is generally linear in nature.
+  {
+    //Statements
+  }
+
+for(i in list)
+  {
+    //Statements
+  }
+
+for(i in map)
+  {
+    // Statements
+  }
+
+for(i in map_name)
+  {
+    // Statements
+  }
+```
+
+### `..` (range) operator
+
+- The range is denoted by `..` and iterates in between the given range linearly.
+
+```groovy
+(start..end).each{
+  // Statements
+}
+```
+
+### `upto` keyword
+
+- The upto method will accomplish the same as the range denoted by `..`. The upto method iterates from the start to the ending value, calling the statements within it with the incremented value once per iteration and will continue as long as the iterator becomes equal to end value.
+
+```groovy
+start.upto(end)
+  {
+    next ->
+    // Statements
+  }
+```
+
+### `downto` keyword
+
+- The downto method iterates in the direction opposite to that of upto.
+
+### `times` keyword
+
+- Let's say we want to run a block of staments or closure for n times, we can do this as:
+
+```groovy
+n.times{
+  // Statements
+}
+```
+
+### `$it`
+
+- represents the iterator count of the loop
+
+### `step`
+
+```groovy
+start.step(end,increment)
+  {
+    //Statements
+  }
+```
+
+```groovy
+while(condition)
+  {
+    // Statements
+  }
+```
 
 </strong>
 </p>
