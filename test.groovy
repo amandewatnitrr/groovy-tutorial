@@ -43,11 +43,51 @@ class main{
             println name.toUpperCase();
             println name.toList();
         }
+    static def function04(nama)
+        {
+            def closure =  { name ->
+                System.out.println("Hello "+ name);
+            }
+
+            closure.call(nama);
+        }
+    
+    static def function05(name,age,ctc,clos)
+        {
+            clos.call(name,age,ctc);
+        }
+
+    static function06(a,size)
+        {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter number to search for in array: ");
+            int v = sc.nextInt();
+            a.each{print("$it ")} // .each for arrays and map can be used to traverse through them linearly.
+            def maps = [
+                "Company" : "GE HTC",
+                "SSO ID"  : 223072286,
+                "Name"    : "Aman"
+            ]
+            maps.each{println("$it ")}
+            println a.find{item -> item == v} // returns the value if found, if not returns null.
+            println a.findAll{item -> item > v} //returns a list of elements from the array satisfying the given condition.
+            println a.any{item -> item > v} // returns true if any of the elements in the list satisfy the given condition, else false
+            println a.every{item -> item > v} // returns true if all of the elements in the list satisfy the given condition, else false
+            println a.collect{item -> item*2} // returns a list after performing arithmetic operation on each element.
+        }
+
     static void main(String[] args)
         {
-            //function03();        
-            
-        }
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter Array Size: ");
+            int n = sc.nextInt();
+            int[] a = new int[n];
+            for(int i=0;i<n;i++)
+                {
+                    a[i] =  sc.nextInt();
+                }
+            function06(a,n);
+        }        
 
         
 }

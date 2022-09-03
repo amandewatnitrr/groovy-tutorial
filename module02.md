@@ -132,7 +132,118 @@ def function_name(datatype parameter1,datatype parameter2...)
     }
 ```
 
+## Closures in Groovy
 
+- Closure is a block of code that can tak parameters, can also refer variables, can return values and can be passed as parameter in a method.
+- Closures can access variables in global scope, but functions can't.
+- Generalised syntax for closure:
+
+```groovy
+    def closure_name = { parameter1 -> // We can remove the paramaeters and arrow, if nothing is required for closure to exectue.
+        // Statements
+    } // This is the definition of the closure
+
+    closure_name.call(parameter1); // This is the calling code for the closure
+```
+
+- Let's see some examples of Closures:
+
+```groovy
+import java.util.*;
+
+class main{
+    static def function04(nama)
+        {
+            def closure =  { name ->
+                System.out.println("Hello "+ name);
+            }
+
+            closure.call(nama);
+        }
+    static void main(String[] args)
+        {
+            //function03();      
+            Scanner sc = new Scanner(System.in);  
+            System.out.println("Enter your name: ");
+            def name = sc.nextLine();
+            function04(name);            
+        }        
+}
+```
+
+- Also, we can pass closure to the functions as well, let's check this through an example:
+
+```groovy
+import java.util.*;
+
+class main{
+     static def function05(name,age,ctc,clos)
+        {
+            clos.call(name,age,ctc);
+        }
+
+    static void main(String[] args)
+        {
+            def global_closure = { name,age,ctc->
+                    println("username: $name - age: $age - ctc: $ctc");
+                }
+            
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter your username, age and ctc: ");
+            String name = sc.nextLine();
+            int age = sc.nextInt();
+            double ctc = sc.nextDouble();
+
+            function05(name,age,ctc,global_closure);
+        }
+}
+```
+
+### Closure Functions
+
+- There are some pre-exsisting closure functions as well in groovy.
+- The data structures in Groovy have several in-built closure functions asscoiated with them.
+- Let's know some of them through the examples:
+
+```groovy
+import java.util.*;
+
+class main{
+    static function06(a,size)
+        {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter number to search for in array: ");
+            int v = sc.nextInt();
+            a.each{print("$it ")} // .each for arrays and map can be used to traverse through them linearly.
+            def maps = [
+                "Company" : "GE HTC",
+                "SSO ID"  : 223072286,
+                "Name"    : "Aman"
+            ]
+            maps.each{println("$it ")}
+            println a.find{item -> item == v} // returns the value if found, if not returns null.
+            println a.findAll{item -> item > v} //returns a list of elements from the array satisfying the given condition.
+            println a.any{item -> item > v} // returns true if any of the elements in the list satisfy the given condition, else false
+            println a.every{item -> item > v} // returns true if all of the elements in the list satisfy the given condition, else false
+            println a.collect{item -> item*2} // returns a list after performing arithmetic operation on each element.
+        }
+
+    static void main(String[] args)
+        {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter Array Size: ");
+            int n = sc.nextInt();
+            int[] a = new int[n];
+            for(int i=0;i<n;i++)
+                {
+                    a[i] =  sc.nextInt();
+                }
+            function06(a,n);
+        }        
+
+        
+}
+```
 
 </strong>
 </p>
