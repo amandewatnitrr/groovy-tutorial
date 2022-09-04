@@ -76,17 +76,48 @@ class main{
             println a.collect{item -> item*2} // returns a list after performing arithmetic operation on each element.
         }
 
-    static void main(String[] args)
+    static void function07() //
         {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter Array Size: ");
+            println("Enter list size: ");
             int n = sc.nextInt();
-            int[] a = new int[n];
-            for(int i=0;i<n;i++)
+            def a = [];
+            for(int i = 0; i < n; i++)
                 {
-                    a[i] =  sc.nextInt();
+                    println("No. of elements you want to append in this row: ");
+                    int c = sc.nextInt();
+                    println("Enter $c values: ")
+                    if(c == 1)
+                        {
+                            a[i] = sc.next();
+                        }
+                    else
+                        {
+                            def temp = [];
+                            for(int j=0;j<c;j++)
+                                {
+                                    temp.add(sc.next()); // Adds the element given as input to the end of the list
+                                }
+                            a.add(temp);
+                        }
+
                 }
-            function06(a,n);
+            println(a);
+            println(a[1]); // Access the complete data at row index 1
+            println(a[1][1]) // Access a single data block in the multidimensional-list
+            println(a.get(1).get(1)); // The above task can be done like this as well.
+            println(a[1..3]) // Prints all the values in the list in the specified range.
+            println(a.contains(22));
+            println(a.size()) // reutrns the number of rows in the list
+            println(a[0].size()) // reutrns the number of columns in the 1st row.
+            // in additon to add function in list we can append the elment using this another method.
+            a<<20; // Pushes in the value at the end of the list.
+            
+        }
+
+    static void main(String[] args)
+        {
+            function07();
         }        
 
         
