@@ -1,5 +1,8 @@
 # Getting Started with Groovy
 
+<p align="justify">
+<strong>
+
 ## Lists/Array in Groovy
 
 - The List is a structure used to store a collection of data items.
@@ -83,3 +86,6 @@ class main{
         }        
 }
 ```
+
+</strong>
+</p>
