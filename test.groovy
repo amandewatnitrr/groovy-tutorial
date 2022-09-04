@@ -112,12 +112,47 @@ class main{
             println(a[0].size()) // reutrns the number of columns in the 1st row.
             // in additon to add function in list we can append the elment using this another method.
             a<<20; // Pushes in the value at the end of the list.
-            
+
+        }
+
+    static void function08()
+        {
+            def employee = [
+                "name" : "Aman",
+                "age" : 21
+            ]
+
+            println employee
+            println employee.name
+            println employee.age
+            println employee['age'];
+            println employee.get('age');
+            println employee.getAt('age');
+            println employee.size();
+            employee.put('key','value');
+            println employee
+            println employee.containsKey('age')
+            println employee.containsValue(21)
+            println employee.getClass();
+            def employee2 = employee.clone();
+            println employee2
+            employee.each{ name,age ->
+                println("name: $name - age: $age")
+            }
+            employee.eachWithIndex{ key,value,i ->
+                println "$i | $key | $value"
+            }
+            employee.each{entry ->
+                println("$entry.key: $entry.value") 
+            }
+
+            employee.clear();
+            println employee;
         }
 
     static void main(String[] args)
         {
-            function07();
+            function08();
         }        
 
         

@@ -87,5 +87,65 @@ class main{
 }
 ```
 
+## Maps in Groovy
+
+- A Map (also known as an associative array, dictionary, table, and hash) is an unordered collection of object references. 
+- The elements in a Map collection are accessed by a key value. 
+- The keys used in a Map can be of any class. 
+- When we insert into a Map collection, two values are required: the key and the value.
+- Following are examples of Maps:
+  - [‘TopicName’ : ‘Lists’, ‘Author’ : ‘Raghav’] – Collections of key value pairs which has TopicName as the key and their respective values.
+  - [ : ] – An Empty map.
+  
+- Let's understand this with an example:
+
+```groovy
+import java.util.*;
+
+class main{
+
+    static void function08()
+        {
+            def map_name = [
+                "key1" : "value1",
+                "key2" : value2
+            ]
+
+            println map_name // prints map key andd value pair
+            println map_name.key1 // returns key1 value 
+            println map_name.key2 // returns key2 value
+            println map_name['key2']; // returns key2 value
+            println map_name.get('key2'); // returns key2 value
+            println map_name.getAt('key2'); // returns key2 value
+            println map_name.size(); // returns the number of key value pair in map
+            map_name.put('key3','value'); // adds key-value pair to the map
+            println map_name
+            println map_name.containsKey('key2') // check if the map contains any key with the specified name
+            println map_name.containsValue(value1) // check if the map contains any key with the specified value
+            println map_name.getClass(); // reutrns the class type of the map
+            def map_name2 = map_name.clone(); // creaters a duplicate of the specified map
+            println map_name2
+            map_name.each{ name,key2 ->
+                println("key1: $name - key2: $key2")
+            }
+            map_name.eachWithIndex{ key,value,i ->
+                println "$i | $key | $value"
+            }
+            map_name.each{entry ->
+                println("$entry.key: $entry.value") 
+            }
+            map_name.clear(); // clears all the key-value pair in the map
+            println map_name;
+        }
+
+    static void main(String[] args)
+        {
+            function08();
+        }        
+
+        
+}
+```
+
 </strong>
 </p>
