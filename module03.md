@@ -13,7 +13,6 @@
 - Groovy Lists are indexed using the indexing operator [].
 - List indices start at zero, which refers to the first element.
 
-
 - Examples of list:
   - [11, 12, 13, 14] – A list of integer values
   - [‘Angular’, ‘Groovy’, ‘Java’] – A list of Strings
@@ -89,9 +88,9 @@ class main{
 
 ## Maps in Groovy
 
-- A Map (also known as an associative array, dictionary, table, and hash) is an unordered collection of object references. 
-- The elements in a Map collection are accessed by a key value. 
-- The keys used in a Map can be of any class. 
+- A Map (also known as an associative array, dictionary, table, and hash) is an unordered collection of object references.
+- The elements in a Map collection are accessed by a key value.
+- The keys used in a Map can be of any class.
 - When we insert into a Map collection, two values are required: the key and the value.
 - Following are examples of Maps:
   - [‘TopicName’ : ‘Lists’, ‘Author’ : ‘Raghav’] – Collections of key value pairs which has TopicName as the key and their respective values.
@@ -144,6 +143,63 @@ class main{
         }        
 
         
+}
+```
+
+## Ranges in Groovy
+
+- A Range is shorthand for specifying a sequence of values.
+- A Range is denoted by the first and last values in the sequence, and Range can be inclusive or exclusive.
+- An inclusive Range includes all the values from the first to the last, while an exclusive Range includes all values except the last.
+- Used to create a list of sequential values
+- Here are some examples of Range literals:-
+  - 1..10 - An example of an inclusive Range
+  - 1..<10 - An example of an exclusive Range
+  - ‘a’..’x’ – Ranges can also consist of characters
+  - 10..1 – Ranges can also be in descending order
+  - ‘x’..’a’ – Ranges can also consist of characters and be in descending order
+- Let's learn about ranges through some examples:
+
+```groovy
+import java.util.*
+
+class main{
+
+    static void function09()
+        {
+            
+            // A simple program to create a user defined range
+
+            Scanner sc = new Scanner(System.in);
+            println("Enter the start and ending value of range: ");
+            def start = sc.nextInt();
+            def end = sc.nextInt();
+            def range = start..end;
+            println("Range $range");
+            println range.size(); // returns the size of the list
+            println range.getFrom(); // returns the starting value of the range
+            println range.getTo(); // returns the ending value of the range
+            println "Enter the index which you want to access: ";
+            def k = sc.nextInt();
+            println range.get(k); // returns the value at the kth index in the range
+            println range[k]; // returns the value at the kth index in the range
+            println range.contains(k); //returns true or false depending on the fact if the specified range contains the specifed value
+            println range.isReverse(); //returns true or false depending on the fact if the specified range is in decrement order or not.
+            def range2 =  range.sublist(3,7);
+            println range2;
+            print("\n [");
+            for (i in range)
+                {
+                    print "$i "
+                }
+            print "]";
+            
+        }
+
+    static void main(String[] args)
+        {
+            function09();
+        }
 }
 ```
 

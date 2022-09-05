@@ -150,9 +150,47 @@ class main{
             println employee;
         }
 
+    static void function09()
+        {   
+            // A simple program to create a user defined range
+
+            Scanner sc = new Scanner(System.in);
+            println("Enter the start and ending value of range: ");
+            def start = sc.nextInt();
+            def end = sc.nextInt();
+            def range = start..end;
+            println("Range $range");
+            println range.size(); // returns the size of the list
+            println range.getFrom(); // returns the starting value of the range
+            println range.getTo(); // returns the ending value of the range
+            println "Enter the index which you want to access: ";
+            def k = sc.nextInt();
+            println range.get(k); // returns the value at the kth index in the range
+            println range[k]; // returns the value at the kth index in the range
+            println range.contains(k); //returns true or false depending on the fact if the specified range contains the specifed value
+            println range.isReverse(); //returns true or false depending on the fact if the specified range is in decrement order or not.
+            def range2 =  range.subList(3,7);
+            println range2;
+
+            print("\n [");
+            for (i in range)
+                {
+                    print "$i "
+                }
+            print "]";
+
+            print("\n [");
+            range.each{ i ->
+                print "$i "
+            }
+            print "]";
+
+            print range instanceof java.util.List
+        }
+
     static void main(String[] args)
         {
-            function08();
+            function09();
         }        
 
         
