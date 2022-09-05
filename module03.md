@@ -193,6 +193,14 @@ class main{
                     print "$i "
                 }
             print "]";
+
+            print("\n [");
+            range.each{ i ->
+                print "$i "
+            }
+            print "]";
+
+            print range instanceof java.util.List
             
         }
 
