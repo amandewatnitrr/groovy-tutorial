@@ -188,9 +188,100 @@ class main{
             print range instanceof java.util.List
         }
 
+    static void function10()
+        {
+            String filepath = "c:/Users/223072287/tech/groovy-tutorial/read.txt";
+            // read file line by line
+            File file = new File(filepath)
+            file.eachLine{ line ->
+                println line;
+            }
+            print "\n";
+
+            // We can also read it as an string as follows:
+            println file.text;
+
+            print "\n";
+
+            // We can also collect lines into a list:
+            def list = file.collect { it }
+            println list;
+
+            print "\n";
+
+            // store file content in a array
+            def array = file as String[];
+            println array;
+
+            print "\n";
+
+            // read file into a list of string
+            def lines = file.readLines();
+            println lines;
+
+            print "\n";
+            // read lines in a file in a given range
+            def linerange = 2..3
+            def linelist =[]
+
+            file.eachLine{ line, lineno ->
+                if(linerange.contains(lineno))
+                    {
+                        linelist.add(line);
+                    }
+            }
+            println linelist;
+            
+            print "\n";
+
+            // read with reader
+            def line;
+            file.withReader{ reader ->
+                while((line = reader.readLine()) != null)
+                    {
+                        println line;
+                    }
+                reader.readLine();
+
+            }
+
+            print "\n";
+
+            // reading with new reader
+            def outputfile = "read2.txt";
+            def reader = file.newReader();
+            new File(outputfile).append(reader);
+            reader.close();
+
+            // when working with binary files, read content as bytes
+            byte[] contents = file.bytes
+            println contents;
+
+            println file.isFile();
+            println file.isDirectory();
+            
+            // get list of files from a directory
+            new File("c:/Users/223072287/tech/groovy-tutorial/").eachFile{ files ->
+                println files.getAbsolutePath();
+            }
+
+            // recursively display all files in a directory and it's sub-dir
+            new File("c:/Users/223072287/tech/groovy-tutorial/").eachFileRecurse{ files->
+                println files.getAbsolutePath();
+            }
+
+            // copy file data to another file
+            def newfile = new File("read3.txt")
+            newfile<< file.text
+
+            // delete file
+            newfile.delete();
+
+        }
+
     static void main(String[] args)
         {
-            function09();
+            function10();
         }        
 
         

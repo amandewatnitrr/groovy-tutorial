@@ -148,7 +148,7 @@ class main{
 
 ## Ranges in Groovy
 
-- A Range is shorthand for specifying a sequence of values.
+- A `Range` is shorthand for specifying a sequence of values.
 - A Range is denoted by the first and last values in the sequence, and Range can be inclusive or exclusive.
 - An inclusive Range includes all the values from the first to the last, while an exclusive Range includes all values except the last.
 - Used to create a list of sequential values
@@ -208,6 +208,118 @@ class main{
         {
             function09();
         }
+}
+```
+
+## Reading files in 
+
+- Reading and Writing files is a one of the core and basic things to learn when learning a programming language.
+- The `eachLine` method is a method added to the File class automatically by Groovy
+- If for some reason `eachLine` throws an exception, the method mkaes sure that the resource is properly closed. This is true for all I/O resource methdos that Groovy adds.
+- Let's understand the following with an example:
+
+```groovy
+import java.util.*;
+
+class main{
+
+    static void function10()
+        {
+            String filepath = "c:/Users/223072287/tech/groovy-tutorial/read.txt";
+            // read file line by line
+            File file = new File(filepath)
+            file.eachLine{ line ->
+                println line;
+            }
+            print "\n";
+
+            // We can also read it as an string as follows:
+            println file.text;
+
+            print "\n";
+
+            // We can also collect lines into a list:
+            def list = file.collect { it }
+            println list;
+
+            print "\n";
+
+            // store file content in a array
+            def array = file as String[];
+            println array;
+
+            print "\n";
+
+            // read file into a list of string
+            def lines = file.readLines();
+            println lines;
+
+            print "\n";
+            // read lines in a file in a given range
+            def linerange = 2..3
+            def linelist =[]
+
+            file.eachLine{ line, lineno ->
+                if(linerange.contains(lineno))
+                    {
+                        linelist.add(line);
+                    }
+            }
+            println linelist;
+            
+            print "\n";
+
+            // read with reader
+            def line;
+            file.withReader{ reader ->
+                while((line = reader.readLine()) != null)
+                    {
+                        println line;
+                    }
+                reader.readLine();
+
+            }
+
+            print "\n";
+
+            // reading with new reader
+            def outputfile = "read2.txt";
+            def reader = file.newReader();
+            new File(outputfile).append(reader);
+            reader.close();
+
+            // when working with binary files, read content as bytes
+            byte[] contents = file.bytes
+            println contents;
+
+            println file.isFile();
+            println file.isDirectory();
+            
+            // get list of files from a directory
+            new File("c:/Users/223072287/tech/groovy-tutorial/").eachFile{ files ->
+                println files.getAbsolutePath();
+            }
+
+            // recursively display all files in a directory and it's sub-dir
+            new File("c:/Users/223072287/tech/groovy-tutorial/").eachFileRecurse{ files->
+                println files.getAbsolutePath();
+            }
+
+            // copy file data to another file
+            def newfile = new File("read3.txt")
+            newfile<< file.text
+
+            // delete file
+            newfile.delete();
+            
+
+        }
+
+    static void main(String[] args)
+        {
+            function10();
+        }        
+
 }
 ```
 
