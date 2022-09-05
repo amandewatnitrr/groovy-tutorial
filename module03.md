@@ -211,7 +211,7 @@ class main{
 }
 ```
 
-## Reading files in 
+## Reading files in Groovy
 
 - Reading and Writing files is a one of the core and basic things to learn when learning a programming language.
 - The `eachLine` method is a method added to the File class automatically by Groovy
@@ -322,6 +322,8 @@ class main{
 
 }
 ```
+
+
 
 </strong>
 </p>
