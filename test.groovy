@@ -279,9 +279,44 @@ class main{
 
         }
 
+    static void function11()
+        {
+            Scanner sc = new Scanner(System.in);
+            String filepath = "c:/Users/223072287/tech/groovy-tutorial/";
+            File file = new File(filepath,"write.txt");
+
+            // Writing into a file using writer
+
+            file.withWriter('utf-8'){ writer ->
+                writer.writeLine "My name is Aman."
+                writer.writeLine "Pursued my B.Tech in Electrical from NIT Raipur"
+                writer.writeLine "Currently working at GE Healthcare as an Edison Engineer."
+            }
+
+            // We can also do the same using << sign as well
+
+            file << """\nMy name is Aman.
+            Pursued my B.Tech in Electrical from NIT Raipur
+            Currently working at GE Healthcare as an Edison Engineer."""
+            
+            // We can also append lines to a file using  append function
+
+            file.append("\nI was born in Raigarh on 1st March.");
+            println "The file length is " + file.length(); // length returns the length of the file
+            println file.text // prints the file on the console output
+            println file.isFile(); // return true or false depending upon the file or directory we are trying to identify
+            println file.isDirectory(); // return true or false depending upon the file or directory we are trying to identify
+            println file.isHidden(); // returns true or false if the file is hidden or not.
+
+            def newwrite =  new File("write2.txt")
+            newwrite << file.text
+
+            newwrite.renameTo("write2.txt");
+        }
+
     static void main(String[] args)
         {
-            function10();
+            function11();
         }        
 
         
